@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Group3</string>
+    <string name="login_text">ĐĂNG NHẬP</string>
+    <string name="author">Made by: Nhom3 TTCS</string>
+    <string name="password_hint_text">Mật khẩu</string>
+    <string name="username_hint_text">Tên đăng nhập</string>
+    <string name="sign_image">Hình ảnh biển báo</string>
+    <string name="app_desc">Nhận diện biển báo giao thông</string>
+</resources>
