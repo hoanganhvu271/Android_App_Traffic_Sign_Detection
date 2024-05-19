@@ -45,7 +45,6 @@ class SignDetailActivity : ComponentActivity() {
         val button = findViewById<Button>(R.id.playButton)
 
         mediaPlayer = MediaPlayer.create(this, audioId)
-
         button.setOnClickListener {
             mediaPlayer?.seekTo(0)
             mediaPlayer?.start()

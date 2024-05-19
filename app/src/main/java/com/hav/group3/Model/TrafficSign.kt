@@ -1,6 +1,7 @@
 package com.hav.group3.Model
 
-class TrafficSign(private var id: String, private var name: String, private var description: String, private var img_id : Int, private var audio_id : Int) {
+class TrafficSign(private var id: String, private var name: String, private var description: String,
+                  private var img_id : Int, private var audio_id : Int) {
 
     companion object {
         val TABLE_NAME = "trafficsign"

@@ -31,9 +31,29 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
             R.drawable.p124a,
             R.raw.p124a
         )
-        val sign2 = TrafficSign("", "No Parking", "No Parking", 0, 0)
-        val sign3 = TrafficSign("", "No U-Turn", "No U-Turn", 0, 0)
+        val sign2 = TrafficSign("W.208", "Giao nhau với đường ưu tiên", "Biển số W.208 \"Giao nhau với đường ưu tiên\" được đặt Trên đường không ưu tiên, để báo trước sắp đến nơi giao nhau với đường ưu tiên. Trong nội thành, nội thị có thể không đặt biển này.\n" +
+                "\n" +
+                "Các xe đi trên đường có đặt biển số W.208 phải nhường đường cho xe đi trên đường ưu tiên khi qua nơi giao nhau (trừ các loại xe được quyền ưu tiên theo quy định).", R.drawable.w208, R.raw.w208)
+        val sign3 = TrafficSign("W.209", "Giao nhau có tín hiệu đèn", "Biển số W.209 \"Giao nhau có tín hiệu đèn\". Để báo trước nơi giao nhau có điều khiển giao thông bằng tín hiệu đèn trong trường hợp người tham gia giao thông khó quan sát thấy đèn để kịp thời xử lý. ", R.drawable.w209, R.raw.w209)
+        val sign4 = TrafficSign("W.210", "Giao nhau có rào chắn", "Biển số W. 210 ” Giao nhau với đường sắt có rào chắn”: Để báo trước sắp đến chỗ giao nhau giữa đường bộ và đường sắt có rào chắn kín hay rào chắn nửa kín và có nhân viên ngành đường sắt điều khiển giao thông, đặt biển số W.", R.drawable.w210, R.raw.w210)
+        val sign5 = TrafficSign("W.219", "Cảnh báo dốc xuống nguy hiểm", "Biển số W.219 \"Dốc xuống nguy hiểm\"\n" +
+                " Để báo trước sắp tới đoạn đường xuống dốc nguy hiểm phải đặt biển số W.219 \"Dốc xuống nguy hiểm\".\n" +
+                " Con số ghi trong biển chỉ độ dốc thực tế tính bằng % làm tròn không có số thập phân Chiều dài của đoạn dốc được chỉ dẫn bằng biển số S.501 \"Phạm vi tác dụng của biển\" đặt bên dưới biển chính.\n" +
+                " Những vị trí xuống dốc nguy hiểm là:\n" +
+                "- Độ dốc từ 6% trở lên và chiều dài dốc trên 600 m;\n" +
+                "- Độ dốc từ 10% trở lên và chiều dài dốc trên 140 m;", R.drawable.w219, R.raw.w219)
+        val sign6 = TrafficSign("W.221b", "Đường không bằng phẳng", "Biển báo giao thông báo hiệu đoạn \"đường có sóng mấp mô nhân tạo (humps)\" để hạn chế tốc độ xe chạy (biển được cắm kèm theo biển số 227 \"Hạn chế tốc độ tối đa\"), bắt buộc lái xe phải chạy với tốc độ chậm trước khi qua những điểm cần kiểm soát, kiểm tra", R.drawable.w221b, R.raw.w221b)
+
+        val sign7 = TrafficSign("W.102", "Đường không bằng phẳng", "Biển báo giao thông báo hiệu đoạn \"đường có sóng mấp mô nhân tạo (humps)\" để hạn chế tốc độ xe chạy (biển được cắm kèm theo biển số 227 \"Hạn chế tốc độ tối đa\"), bắt buộc lái xe phải chạy với tốc độ chậm trước khi qua những điểm cần kiểm soát, kiểm tra", R.drawable.p102, R.raw.p102)
+
+
         addTrafficSign(db, sign1)
+        addTrafficSign(db, sign2)
+        addTrafficSign(db, sign3)
+        addTrafficSign(db, sign4)
+        addTrafficSign(db, sign5)
+        addTrafficSign(db, sign6)
+        addTrafficSign(db, sign7)
     }
 
     private fun addTrafficSign(db: SQLiteDatabase, sign: TrafficSign) {

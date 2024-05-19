@@ -23,18 +23,37 @@ import com.hav.group3.Yolo.Detector
 import com.hav.group3.databinding.ActivityMainBinding
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import android.media.MediaPlayer
+import com.hav.group3.R
+import java.util.LinkedList
+import java.util.Queue
+import kotlinx.coroutines.*
 
 class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
     private lateinit var binding: ActivityMainBinding
     private val isFrontCamera = false
-
+    private val isDetecting: Array<Boolean> = Array(68) { false }
+    val processedDetections = HashSet<Int>()
     private var preview: Preview? = null
     private var imageAnalyzer: ImageAnalysis? = null
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
     private lateinit var detector: Detector
+    val audioQueue: Queue<Int> = LinkedList()
+    var mediaPlayer: MediaPlayer? = null
 
     private lateinit var cameraExecutor: ExecutorService
+
+    val audioResourceMap = mapOf(
+        "p124a" to R.raw.p124a,
+        "w208" to R.raw.w208,
+        "w209" to R.raw.w209,
+        "w210" to R.raw.w210,
+        "w219" to R.raw.w219,
+        "w221b" to R.raw.w221b,
+        "p102" to R.raw.p102
+    )
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,13 +75,14 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraProviderFuture.addListener({
-            cameraProvider  = cameraProviderFuture.get()
+            cameraProvider = cameraProviderFuture.get()
             bindCameraUseCases()
         }, ContextCompat.getMainExecutor(this))
     }
 
     private fun bindCameraUseCases() {
-        val cameraProvider = cameraProvider ?: throw IllegalStateException("Camera initialization failed.")
+        val cameraProvider =
+            cameraProvider ?: throw IllegalStateException("Camera initialization failed.")
 
         val rotation = binding.viewFinder.display.rotation
 
@@ -71,7 +91,7 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
             .requireLensFacing(CameraSelector.LENS_FACING_BACK)
             .build()
 
-        preview =  Preview.Builder()
+        preview = Preview.Builder()
             .setTargetAspectRatio(AspectRatio.RATIO_4_3)
             .setTargetRotation(rotation)
             .build()
@@ -125,7 +145,7 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
             )
 
             preview?.setSurfaceProvider(binding.viewFinder.surfaceProvider)
-        } catch(exc: Exception) {
+        } catch (exc: Exception) {
             Log.e(TAG, "Use case binding failed", exc)
         }
     }
@@ -135,19 +155,23 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
     }
 
     private val requestPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions()) {
-        if (it[Manifest.permission.CAMERA] == true) { startCamera() }
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) {
+        if (it[Manifest.permission.CAMERA] == true) {
+            startCamera()
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         detector.clear()
         cameraExecutor.shutdown()
+        job.cancel()
     }
 
     override fun onResume() {
         super.onResume()
-        if (allPermissionsGranted()){
+        if (allPermissionsGranted()) {
             startCamera()
         } else {
             requestPermissionLauncher.launch(REQUIRED_PERMISSIONS)
@@ -157,7 +181,7 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
     companion object {
         private const val TAG = "Camera"
         private const val REQUEST_CODE_PERMISSIONS = 10
-        private val REQUIRED_PERMISSIONS = mutableListOf (
+        private val REQUIRED_PERMISSIONS = mutableListOf(
             Manifest.permission.CAMERA
         ).toTypedArray()
     }
@@ -166,13 +190,64 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
         binding.overlay.invalidate()
     }
 
+
+
+// ...
+
+    private val job = Job()
+    private val scope = CoroutineScope(Dispatchers.Main + job)
+
     override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
-        runOnUiThread {
-            binding.inferenceTime.text = "${inferenceTime}ms"
-            binding.overlay.apply {
-                setResults(boundingBoxes)
-                invalidate()
+        scope.launch {
+            val isExisted: MutableMap<Int, Int> = mutableMapOf()
+            for (i in boundingBoxes.indices) {
+                val clsIndex = boundingBoxes[i].cls
+                isExisted[boundingBoxes[i].cls] = 1
+                if (!isDetecting[clsIndex]) {
+                    val audioName = boundingBoxes[i].clsName.replace(".", "").lowercase()
+                    val resourceId = audioResourceMap[audioName]
+
+                    if (resourceId != null) {
+                        audioQueue.offer(resourceId)
+                        isDetecting[clsIndex] = true
+                        processedDetections.add(clsIndex)
+                    } else {
+                        Log.e("AudioError", "Audio resource not found for name: $audioName")
+                    }
+                }
+            }
+
+            for(i in isDetecting.indices) {
+                if(isExisted[i] == null) {
+                    isDetecting[i] = false
+                }
+            }
+
+            playNextAudio()
+
+            withContext(Dispatchers.Main) {
+                binding.inferenceTime.text = "${inferenceTime}ms"
+                binding.overlay.apply {
+                    setResults(boundingBoxes)
+                    invalidate()
+                }
             }
         }
     }
+    private fun playNextAudio() {
+        scope.launch(Dispatchers.IO) {
+            val nextAudio = audioQueue.poll()
+            if (nextAudio != null) {
+                mediaPlayer = MediaPlayer.create(this@DetectActivity, nextAudio)
+                mediaPlayer?.setOnCompletionListener {
+                    it.release()
+                    if (!audioQueue.isEmpty()) {
+                        playNextAudio()
+                    }
+                }
+                mediaPlayer?.start()
+            }
+        }
+    }
+
 }

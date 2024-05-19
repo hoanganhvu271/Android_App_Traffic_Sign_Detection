@@ -27,7 +27,6 @@
             </intent-filter>
         </activity>
 
-
         <activity
             android:name=".Activity.HomeActivity"
             android:screenOrientation="landscape"

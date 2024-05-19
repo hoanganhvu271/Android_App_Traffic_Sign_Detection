@@ -57,50 +57,49 @@
                     android:id="@+id/idSignDetailImage"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:background="@color/black"
                     android:contentDescription="@string/sign_image" />
 
             </LinearLayout>
 
-
-
-            <LinearLayout
+            <!-- Wrap the second LinearLayout with a ScrollView -->
+            <ScrollView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/idSignDetailName"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Sign Name"
-                    android:textSize="24sp"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <TextView
-                    android:id="@+id/idSignDetailDescription"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Sign Description"
-                    android:layout_marginTop="8dp"/>
-                <Button
-                    android:id="@+id/playButton"
-                    android:layout_marginTop="30dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Phát"/>
+                    <TextView
+                        android:id="@+id/idSignDetailName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Sign Name"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
+                    <TextView
+                        android:id="@+id/idSignDetailDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Sign Description"
+                        android:layout_marginTop="8dp" />
 
-            </LinearLayout>
+                    <Button
+                        android:id="@+id/playButton"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phát" />
+
+                </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
-
-
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

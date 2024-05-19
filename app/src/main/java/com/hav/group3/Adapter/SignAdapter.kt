@@ -26,18 +26,15 @@ class SignAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
-        // Set the data to textview and imageview.
         val sign: TrafficSign = signDataArrayList[position]
         holder.name.setText(sign.getName())
         holder.img.setImageResource(sign.getImgId())
     }
 
     override fun getItemCount(): Int {
-        // this method returns the size of recyclerview
         return signDataArrayList.size
     }
 
-    // View Holder Class to handle Recycler View.
     inner class RecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         public val name: TextView
         public val img: ImageView
