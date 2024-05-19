@@ -100,8 +100,10 @@ class Detector(
         inferenceTime = SystemClock.uptimeMillis() - inferenceTime
 
 
+
         if (bestBoxes == null) {
             detectorListener.onEmptyDetect()
+//            Log.d("Box", "hehe")
             return
         }
 
@@ -200,6 +202,6 @@ class Detector(
         private val INPUT_IMAGE_TYPE = DataType.FLOAT32
         private val OUTPUT_IMAGE_TYPE = DataType.FLOAT32
         private const val CONFIDENCE_THRESHOLD = 0.3F
-        private const val IOU_THRESHOLD = 0.7F
+        private const val IOU_THRESHOLD = 0.5F
     }
 }

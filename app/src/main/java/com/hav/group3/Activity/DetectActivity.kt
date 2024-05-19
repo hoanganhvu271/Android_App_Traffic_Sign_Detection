@@ -187,7 +187,11 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
     }
 
     override fun onEmptyDetect() {
-        binding.overlay.invalidate()
+//        Log.d("Box", "Empty")
+        binding.overlay.apply {
+            setResults(emptyList())
+            invalidate()
+        }
     }
 
 
