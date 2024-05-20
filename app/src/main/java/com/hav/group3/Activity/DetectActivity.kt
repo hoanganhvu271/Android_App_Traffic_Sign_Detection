@@ -24,6 +24,8 @@ import com.hav.group3.databinding.ActivityMainBinding
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import android.media.MediaPlayer
+import android.widget.ImageView
+import com.hav.group3.Helper.DatabaseHelper
 import com.hav.group3.R
 import java.util.LinkedList
 import java.util.Queue
@@ -41,6 +43,10 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
     private lateinit var detector: Detector
     val audioQueue: Queue<Int> = LinkedList()
     var mediaPlayer: MediaPlayer? = null
+    var db: DatabaseHelper? = null
+
+    private val job = Job()
+    private val scope = CoroutineScope(Dispatchers.Main + job)
 
     private lateinit var cameraExecutor: ExecutorService
 
@@ -59,9 +65,15 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        db  = DatabaseHelper(this)
         detector = Detector(baseContext, MODEL_PATH, LABELS_PATH, this)
         detector.setup()
+
+        val backButton = findViewById<ImageView>(R.id.idDetectBack);
+
+        backButton.setOnClickListener(){
+            finish()
+        }
 
         if (allPermissionsGranted()) {
             startCamera()
@@ -188,6 +200,10 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
 
     override fun onEmptyDetect() {
 //        Log.d("Box", "Empty")
+
+        for(i in 0 until 68) {
+            isDetecting[i] = false
+        }
         binding.overlay.apply {
             setResults(emptyList())
             invalidate()
@@ -195,20 +211,21 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
     }
 
 
-
 // ...
-
-    private val job = Job()
-    private val scope = CoroutineScope(Dispatchers.Main + job)
 
     override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
         scope.launch {
             val isExisted: MutableMap<Int, Int> = mutableMapOf()
             for (i in boundingBoxes.indices) {
                 val clsIndex = boundingBoxes[i].cls
-                isExisted[boundingBoxes[i].cls] = 1
+                isExisted[clsIndex] = 1
+                val sign = db?.getTrafficSign(boundingBoxes[i].clsName)
+                if (sign != null) {
+                    //Insert History
+                }
                 if (!isDetecting[clsIndex]) {
                     val audioName = boundingBoxes[i].clsName.replace(".", "").lowercase()
+//                    Log.d("Vu", "hehe")
                     val resourceId = audioResourceMap[audioName]
 
                     if (resourceId != null) {
@@ -221,9 +238,11 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
                 }
             }
 
-            for(i in isDetecting.indices) {
-                if(isExisted[i] == null) {
+            for(i in 0 until 68) {
+                if(isExisted[i] != 1 ) {
+
                     isDetecting[i] = false
+//                    Log.d("Vu", isDetecting[1].toString())
                 }
             }
 
