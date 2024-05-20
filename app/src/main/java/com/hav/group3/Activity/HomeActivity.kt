@@ -14,6 +14,11 @@ class HomeActivity : ComponentActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         setContentView(R.layout.home)
 
+        val historyButton = findViewById<View>(R.id.history_button)
+        historyButton.setOnClickListener {
+            startActivity(Intent(this, HistoryActivity::class.java))
+        }
+
         val detectButton = findViewById<View>(R.id.detection_button)
         detectButton.setOnClickListener {
             startActivity(Intent(this, DetectActivity::class.java))

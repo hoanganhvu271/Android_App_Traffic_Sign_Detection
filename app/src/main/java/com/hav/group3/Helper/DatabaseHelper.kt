@@ -23,6 +23,8 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         onCreate(db)
     }
 
+
+
     fun getTrafficSign(signId: String): TrafficSign? {
         val db = this.readableDatabase
         val selectQuery = "SELECT * FROM " + TrafficSign.TABLE_NAME + " WHERE " + TrafficSign.COLUMN_SIGN_ID + " = ?"
@@ -74,7 +76,7 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
                 "- Độ dốc từ 10% trở lên và chiều dài dốc trên 140 m;", R.drawable.w219, R.raw.w219)
         val sign6 = TrafficSign("W.221b", "Đường không bằng phẳng", "Biển báo giao thông báo hiệu đoạn \"đường có sóng mấp mô nhân tạo (humps)\" để hạn chế tốc độ xe chạy (biển được cắm kèm theo biển số 227 \"Hạn chế tốc độ tối đa\"), bắt buộc lái xe phải chạy với tốc độ chậm trước khi qua những điểm cần kiểm soát, kiểm tra", R.drawable.w221b, R.raw.w221b)
 
-        val sign7 = TrafficSign("W.102", "Cấm đi ngược chiều", "Biển số P.102 có tác dụng báo cho người tham gia giao thông biết \"Tất cả các phương tiện giao thông không được đi ngược chiều kể từ sau biển báo.\" Biển báo thường được cắm ở phần lối rẽ giữa dải phân cách của đoạn đường 2 chiều. Biển số P.102 báo đường cấm các loại xe đi vào theo chiều đặt biển, trừ các xe được ưu tiên theo quy định.", R.drawable.p102, R.raw.p102)
+        val sign7 = TrafficSign("P.102", "Cấm đi ngược chiều", "Biển số P.102 có tác dụng báo cho người tham gia giao thông biết \"Tất cả các phương tiện giao thông không được đi ngược chiều kể từ sau biển báo.\" Biển báo thường được cắm ở phần lối rẽ giữa dải phân cách của đoạn đường 2 chiều. Biển số P.102 báo đường cấm các loại xe đi vào theo chiều đặt biển, trừ các xe được ưu tiên theo quy định.", R.drawable.p102, R.raw.p102)
 
 
         addTrafficSign(db, sign1)

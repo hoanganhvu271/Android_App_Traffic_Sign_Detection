@@ -25,11 +25,23 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import android.media.MediaPlayer
 import android.widget.ImageView
+import android.widget.Toast
+import com.hav.group3.Api.G3Api
 import com.hav.group3.Helper.DatabaseHelper
+import com.hav.group3.Model.DataResponse
+import com.hav.group3.Model.TrafficSign
 import com.hav.group3.R
 import java.util.LinkedList
 import java.util.Queue
 import kotlinx.coroutines.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
     private lateinit var binding: ActivityMainBinding
@@ -44,6 +56,7 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
     val audioQueue: Queue<Int> = LinkedList()
     var mediaPlayer: MediaPlayer? = null
     var db: DatabaseHelper? = null
+    private val BASE_URL = "https://backend-1-rnqj.onrender.com"
 
     private val job = Job()
     private val scope = CoroutineScope(Dispatchers.Main + job)
@@ -221,7 +234,7 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
                 isExisted[clsIndex] = 1
                 val sign = db?.getTrafficSign(boundingBoxes[i].clsName)
                 if (sign != null) {
-                    //Insert History
+                    insertHistory(sign)
                 }
                 if (!isDetecting[clsIndex]) {
                     val audioName = boundingBoxes[i].clsName.replace(".", "").lowercase()
@@ -271,6 +284,34 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
                 mediaPlayer?.start()
             }
         }
+    }
+
+    val api = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create(G3Api::class.java)
+
+    private fun insertHistory(sign: TrafficSign) {
+
+        val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault())
+        val currentDateandTime: String = sdf.format(Date())
+        api.createNewHistory(sign.getId(), currentDateandTime, "B21DCCN343")
+            ?.enqueue( object : Callback<DataResponse?> {
+                override fun onResponse(call: Call<DataResponse?>, response: Response<DataResponse?>) {
+                    if (response.isSuccessful && response.body()?.status == 200){
+                        Toast.makeText(this@DetectActivity, "Saved!", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        Toast.makeText(this@DetectActivity, "Not Saved!", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<DataResponse?>, t: Throwable) {
+//                    Toast.makeText(this@DetectActivity, "Server Error", Toast.LENGTH_SHORT).show()
+                }
+            })
+
     }
 
 }

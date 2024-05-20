@@ -51,6 +51,12 @@
             android:screenOrientation="landscape"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".Activity.HistoryActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
