@@ -1,5 +1,6 @@
 package com.hav.group3.Activity
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hav.group3.Adapter.HistoryAdapter
+import com.hav.group3.Api.ApiClient
 import com.hav.group3.Api.G3Api
 import com.hav.group3.Helper.DatabaseHelper
 import com.hav.group3.Model.DataResponse
@@ -26,7 +28,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class HistoryActivity : ComponentActivity() {
     var db: DatabaseHelper? = null
-    private val BASE_URL = "https://backend-1-rnqj.onrender.com"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -44,15 +45,16 @@ class HistoryActivity : ComponentActivity() {
         var historyDataArrayList = ArrayList<DetectionHistory>()
 
         //Call Api
-        val api = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(G3Api::class.java)
+
 
         var adapter: HistoryAdapter ?= null
 
-        api.getDetectionHistory("B21DCCN343")
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("token", "")
+        Log.d("Vu", token.toString())
+        val api = ApiClient.createClient(token ?: "")
+
+        api.getDetectionHistory()
             ?.enqueue( object : Callback<HistoryResponse?> {
                 override fun onResponse(call: Call<HistoryResponse?>, response: Response<HistoryResponse?>) {
                     Log.d("Vu", response.body()?.data.toString())
@@ -60,10 +62,28 @@ class HistoryActivity : ComponentActivity() {
                         historyDataArrayList = response.body()?.data ?: ArrayList<DetectionHistory>()
                         Log.d("Vu", historyDataArrayList.toString())
 
-                        val adapter = HistoryAdapter(historyDataArrayList, this@HistoryActivity, object : HistoryAdapter.ItemClickListener {
-                            override fun onItemClick(position: Int) {}
-                        }, db!!)
+                        //reverse the list
+                        historyDataArrayList.reverse()
 
+                        val adapter = HistoryAdapter(historyDataArrayList, this@HistoryActivity, object : HistoryAdapter.ItemClickListener {
+                            override fun onItemClick(position: Int) {
+                                val history = historyDataArrayList[position]
+                                val intent = Intent(this@HistoryActivity, MapActivity::class.java)
+                                val name = db!!.getTrafficSign(history.signId)
+
+                                val bundle = Bundle().apply {
+                                    putString("id", history.signId)
+                                    if (name != null) {
+                                        putString("name", name.getName())
+                                    }
+                                    putString("longitude", history.longitude)
+                                    putString("latitude", history.latitude)
+                                    putString("time", history.time)
+                                }
+                                intent.putExtras(bundle)
+                                startActivity(intent)
+                            }
+                        }, db!!)
                         historyRecyclerView.layoutManager = LinearLayoutManager(this@HistoryActivity, LinearLayoutManager.VERTICAL, false)
                         historyRecyclerView.adapter = adapter
                     }

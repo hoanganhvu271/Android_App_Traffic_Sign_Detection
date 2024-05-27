@@ -10,5 +10,11 @@ data class DetectionHistory(
     @SerializedName("Time")
     var time: String,
     @SerializedName("UserId")
-    var userId: String
+    var userId: String,
+
+    @SerializedName("Longitude")
+    var longitude: String,
+
+    @SerializedName("Latitude")
+    var latitude: String
 )

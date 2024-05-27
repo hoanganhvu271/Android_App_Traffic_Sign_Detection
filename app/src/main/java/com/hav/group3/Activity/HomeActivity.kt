@@ -23,6 +23,11 @@ class HomeActivity : ComponentActivity() {
         detectButton.setOnClickListener {
             startActivity(Intent(this, DetectActivity::class.java))
         }
+
+        val feedBack = findViewById<View>(R.id.feed_back)
+        feedBack.setOnClickListener {
+            startActivity(Intent(this, FeedBackActivity::class.java))
+        }
     }
 
     fun signListClicked(view: View?) {

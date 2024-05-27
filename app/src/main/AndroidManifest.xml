@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -54,6 +59,17 @@
 
         <activity
             android:name=".Activity.HistoryActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Activity.MapActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".Activity.FeedBackActivity"
             android:screenOrientation="landscape"
             android:exported="true">
         </activity>

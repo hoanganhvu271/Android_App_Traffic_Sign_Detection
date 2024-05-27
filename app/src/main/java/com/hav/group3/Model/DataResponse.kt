@@ -11,3 +11,10 @@ data class HistoryResponse(
     val message : String,
     val data : ArrayList<DetectionHistory>
 )
+
+data class LoginResponse(
+    val code: Int,
+    val status: Int,
+    val message : String,
+    val data : String
+)

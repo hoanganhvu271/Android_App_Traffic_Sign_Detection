@@ -2,11 +2,17 @@ package com.hav.group3.Api
 
 import com.hav.group3.Model.DataResponse
 import com.hav.group3.Model.HistoryResponse
+import com.hav.group3.Model.LoginResponse
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.Part
 import retrofit2.http.Query
 
 
@@ -17,16 +23,24 @@ interface G3Api {
     fun checkLogin(
         @Field("username") userName: String?,
         @Field("password") passWord: String?
-    ): Call<DataResponse?>?
+    ): Call<LoginResponse?>?
 
     @GET("api/get-history")
-    fun getDetectionHistory(@Query("id") id: String?): Call<HistoryResponse?>?
+    fun getDetectionHistory(): Call<HistoryResponse?>?
 
     @FormUrlEncoded
     @POST("api/new-history")
     fun createNewHistory(
         @Field("SignId") signId: String?,
         @Field("Time") time: String?,
-        @Field("UserId") userId: String?
+        @Field("Longitude") longitude: String?,
+        @Field("Latitude") latitude: String?
     ): Call<DataResponse?>?
+
+    @Multipart
+    @POST("api/send-feedback")
+    fun sendFeedback(
+        @Part image: MultipartBody.Part,
+        @Part("text") content: String?
+    ): Call<DataResponse>
 }
