@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.hav.group3.Api.G3Api
@@ -32,6 +33,18 @@ class MainActivity : ComponentActivity() {
         val token = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE).getString("token", null)
         if (token != null) {
             val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        val register = findViewById<TextView>(R.id.tv_register)
+        register.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        val forgot = findViewById<TextView>(R.id.tv_forgot_password)
+        forgot.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
         }
     }

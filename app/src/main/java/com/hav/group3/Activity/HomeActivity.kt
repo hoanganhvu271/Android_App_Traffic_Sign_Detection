@@ -1,6 +1,7 @@
 package com.hav.group3.Activity
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -27,6 +28,15 @@ class HomeActivity : ComponentActivity() {
         val feedBack = findViewById<View>(R.id.feed_back)
         feedBack.setOnClickListener {
             startActivity(Intent(this, FeedBackActivity::class.java))
+        }
+
+        val logoutButton = findViewById<View>(R.id.logout_button)
+        logoutButton.setOnClickListener {
+
+            val sharedPreferences: SharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.clear()
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 

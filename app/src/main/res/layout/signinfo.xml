@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:text="Danh sách biển báo"
+        android:fontFamily="@font/lexendbold"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"

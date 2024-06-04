@@ -73,6 +73,31 @@
             android:screenOrientation="landscape"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".Activity.RegisterActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".Activity.ForgotPasswordActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".Activity.OtpActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".Activity.ResetPasswordActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

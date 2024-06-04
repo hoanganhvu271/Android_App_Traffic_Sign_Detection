@@ -12,60 +12,96 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/login_text"
-        android:textStyle="bold"
+        android:fontFamily="@font/lexendbold"
         android:textColor="#fff"
         android:textSize="25sp">
     </TextView>
 
     <LinearLayout
         android:id="@+id/login_form"
-        android:layout_width="480dp"
-        android:layout_height="260dp"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rounded_corners"
         android:elevation="20dp"
-        android:outlineProvider="bounds"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:outlineProvider="bounds">
 
         <EditText
             android:id="@+id/editText_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
             android:background="@drawable/rounded_corners"
-            android:padding="15dp"
             android:backgroundTint="@color/inputBgColor"
             android:hint="@string/username_hint_text"
+            android:fontFamily="@font/lexend"
+            android:padding="12dp"
             android:textColorHint="@color/textHintColor" />
 
         <EditText
             android:id="@+id/editText_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="30dp"
             android:background="@drawable/rounded_corners"
-            android:padding="15dp"
-            android:hint="@string/password_hint_text"
-            android:textColorHint="@color/textHintColor"
             android:backgroundTint="@color/inputBgColor"
-            android:inputType="textPassword"/>
+            android:hint="@string/password_hint_text"
+            android:fontFamily="@font/lexend"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColorHint="@color/textHintColor" />
 
         <Button
             android:id="@+id/button_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="Login"
-            android:textColor="#fff"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button"
             android:onClick="loginButtonClicked"
-            android:background="@drawable/button"/>
+            android:text="Login"
+            android:fontFamily="@font/lexend"
+            android:textColor="#fff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Đăng ký"
+                android:fontFamily="@font/lexend"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Quên mật khẩu?"
+                android:fontFamily="@font/lexend"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -77,6 +113,7 @@
         android:textColor="#fff"
         android:textSize="14sp"
         android:text="@string/author"
+        android:fontFamily="@font/lexendbold"
         android:layout_gravity="center_horizontal">
 
     </TextView>

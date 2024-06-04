@@ -18,6 +18,8 @@ import retrofit2.http.Query
 
 interface G3Api {
 
+
+
     @FormUrlEncoded
     @POST("api/login-app")
     fun checkLogin(
@@ -37,10 +39,41 @@ interface G3Api {
         @Field("Latitude") latitude: String?
     ): Call<DataResponse?>?
 
+    @FormUrlEncoded
+    @POST("api/register")
+    fun createNewAccount(
+        @Field("username") username: String?,
+        @Field("password") password: String?,
+        @Field("name") name : String?,
+        @Field("email") email: String?,
+        @Field("phone") phone: String?
+    ): Call<DataResponse?>?
+
     @Multipart
     @POST("api/send-feedback")
     fun sendFeedback(
         @Part image: MultipartBody.Part,
         @Part("text") content: String?
     ): Call<DataResponse>
+
+    @FormUrlEncoded
+    @POST("api/send-otp")
+    fun sendOtp(
+        @Field("email") email: String?
+    ): Call<DataResponse?>?
+
+    @FormUrlEncoded
+    @POST("api/verify-otp")
+    fun verifyOtp(
+        @Field("email") email: String?,
+        @Field("otp") otp: String?
+    ): Call<DataResponse?>?
+
+    @FormUrlEncoded
+    @POST("api/change-password")
+    fun changePassword(
+        @Field("email") email: String?,
+        @Field("newPassword") newPassword: String?,
+        @Field("confirmPassword") confirmPassword: String?
+    ): Call<DataResponse?>?
 }

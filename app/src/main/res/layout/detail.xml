@@ -79,8 +79,8 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:text="Sign Name"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textSize="22sp"
+                        android:fontFamily="@font/lexendbold" />
 
                     <TextView
                         android:id="@+id/idSignDetailDescription"
@@ -88,6 +88,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:text="Sign Description"
+                        android:fontFamily="@font/lexend"
                         android:layout_marginTop="8dp" />
 
                     <Button
@@ -95,6 +96,7 @@
                         android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend"
                         android:text="Phát" />
 
                 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    app:cardBackgroundColor="@color/purple_200"
+    app:cardBackgroundColor="#5234eb"
     android:layout_margin="5dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp">
@@ -25,6 +25,7 @@
             android:textStyle="bold"
             android:layout_marginTop="10dp"
             android:text="1"
+            android:fontFamily="@font/lexendbold"
             android:textAlignment="center" />
 
         <TextView
@@ -35,6 +36,7 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/lexend"
             android:text="Cấm đi ngược chiều"
             android:textAlignment="center" />
 
@@ -47,6 +49,7 @@
             android:textStyle="bold"
             android:layout_marginTop="10dp"
             android:text="11/07/2024 12:00:00"
+            android:fontFamily="@font/lexend"
             android:textAlignment="center" />
 
     </LinearLayout>
