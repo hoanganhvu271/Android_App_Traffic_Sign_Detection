@@ -33,6 +33,11 @@ class OtpActivity : ComponentActivity() {
 
         val button = findViewById<Button>(R.id.btn_otp)
 
+        val back = findViewById<View>(R.id.back)
+        back.setOnClickListener {
+            finish()
+        }
+
         button.setOnClickListener {
             verifyOtp(email, otp.text.toString())
         }

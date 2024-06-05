@@ -73,20 +73,15 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
 
     private lateinit var cameraExecutor: ExecutorService
 
-    val audioResourceMap = mapOf(
-        "p124a" to R.raw.p124a,
-        "w208" to R.raw.w208,
-        "w209" to R.raw.w209,
-        "w210" to R.raw.w210,
-        "w219" to R.raw.w219,
-        "w221b" to R.raw.w221b,
-        "p102" to R.raw.p102
-    )
+    val audioResourceMap = AudioResources.audioResourceMap
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        );
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -209,12 +204,12 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
                 it.shutdown()
             }
         }
-        mediaPlayer?.let {
-            if (it.isPlaying) {
-                it.stop()
-                it.release()
-            }
-        }
+//        mediaPlayer?.let {
+//            if (it.isPlaying) {
+//                it.stop()
+//                it.release()
+//            }
+//        }
         cameraProvider?.unbindAll()
         cameraProvider = null
         job.cancel()
@@ -274,8 +269,10 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
 
                     val audioName = boundingBoxes[i].clsName.replace(".", "").lowercase()
 //                    Log.d("Vu", "hehe")
-                    val resourceId = audioResourceMap[audioName]
-
+//                    val resourceId = audioResourceMap[audioName]
+                    val context = this@DetectActivity
+                    val resourceId =
+                        context.resources.getIdentifier(audioName, "raw", context.packageName)
                     if (resourceId != null) {
                         audioQueue.offer(resourceId)
                         isDetecting[clsIndex] = true
@@ -294,7 +291,9 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
                 }
             }
 
+
             playNextAudio()
+
 
             withContext(Dispatchers.Main) {
                 binding.inferenceTime.text = "${inferenceTime}ms"
@@ -306,18 +305,22 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
         }
     }
 
+    private var isPlay = false
+
     private fun playNextAudio() {
         scope.launch(Dispatchers.IO) {
-            val nextAudio = audioQueue.poll()
-            if (nextAudio != null) {
-                mediaPlayer = MediaPlayer.create(this@DetectActivity, nextAudio)
-                mediaPlayer?.setOnCompletionListener {
-                    it.release()
-                    if (!audioQueue.isEmpty()) {
+            if (!isPlay && audioQueue.isNotEmpty()) {
+                val nextAudio = audioQueue.poll()
+                mediaPlayer?.release()
+                mediaPlayer = MediaPlayer.create(this@DetectActivity, nextAudio).apply {
+                    setOnCompletionListener {
+                        isPlay = false
+                        it.release()
                         playNextAudio()
                     }
+                    start()
+                    isPlay = true
                 }
-                mediaPlayer?.start()
             }
         }
     }

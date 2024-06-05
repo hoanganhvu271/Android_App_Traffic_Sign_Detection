@@ -27,6 +27,11 @@ class ResetPasswordActivity : ComponentActivity() {
         val tvConfirmPassword = findViewById<EditText>(R.id.et_confirm_password)
         val email = intent.getStringExtra("email")
 
+        val back = findViewById<View>(R.id.back)
+        back.setOnClickListener {
+            finish()
+        }
+
         val button = findViewById<View>(R.id.btn_reset_password)
         button.setOnClickListener {
             if (tvPassword != null && tvConfirmPassword != null) {
@@ -56,7 +61,10 @@ class ResetPasswordActivity : ComponentActivity() {
             override fun onResponse(call: Call<DataResponse?>, response: Response<DataResponse?>) {
                 if (response.isSuccessful && response.body()?.status == 200){
                     Toast.makeText(this@ResetPasswordActivity, "Password reset success", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@ResetPasswordActivity, MainActivity::class.java))
+
+                    intent = Intent(this@ResetPasswordActivity, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this@ResetPasswordActivity,"Password reset failed", Toast.LENGTH_SHORT).show()
                 }

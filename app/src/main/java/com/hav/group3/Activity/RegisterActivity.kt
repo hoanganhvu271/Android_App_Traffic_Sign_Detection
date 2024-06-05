@@ -29,6 +29,10 @@ class RegisterActivity : ComponentActivity() {
             val name = findViewById<EditText>(R.id.fullname).text.toString()
             val email = findViewById<EditText>(R.id.email).text.toString()
             val phone = findViewById<EditText>(R.id.phone).text.toString()
+            if(username.isEmpty() || password.isEmpty() || name.isEmpty() || email.isEmpty() || phone.isEmpty()){
+                Toast.makeText(this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             val api = ApiClient.createClient( "")
             val call = api.createNewAccount(username, password, name, email, phone)

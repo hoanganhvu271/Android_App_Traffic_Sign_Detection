@@ -36,7 +36,12 @@ class HomeActivity : ComponentActivity() {
             val sharedPreferences: SharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
             val editor = sharedPreferences.edit()
             editor.clear()
-            startActivity(Intent(this, MainActivity::class.java))
+            editor.apply()
+
+            intent = Intent(this, MainActivity::class.java)
+
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
     }
 

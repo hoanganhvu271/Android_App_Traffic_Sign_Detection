@@ -1,0 +1,478 @@
+[
+  {
+    "id": "DP.135",
+    "name": "Hết tất cả các lệnh cấm",
+    "description": "Biển số DP.135 là biển báo hết tất cả các lệnh cấm. Đến hết đoạn đường mà nhiều biển báo cấm cùng hết hiệu lực, phải đặt biển DP.135.\nBiển có giá trị báo cho người tham gia giao thông biết hiệu lực của biển số P.121 và nhiều biển cấm khác từ biển P.125 đến biển P.131 được đặt trước đó đều hết tác dụng.",
+    "imgId": "dp135",
+    "audioId": "dp135"
+  },
+  {
+    "id": "P.102",
+    "name": "Cấm đi ngược chiều",
+    "description": "Biển số P.102 có tác dụng báo cho người tham gia giao thông biết \"Tất cả các phương tiện giao thông không được đi ngược chiều kể từ sau biển báo.\" Biển báo thường được cắm ở phần lối rẽ giữa dải phân cách của đoạn đường 2 chiều. Biển số P.102 báo đường cấm các loại xe đi vào theo chiều đặt biển, trừ các xe được ưu tiên theo quy định.",
+    "imgId": "p102",
+    "audioId": "p102"
+  },
+  {
+    "id": "P.103a",
+    "name": "Cấm xe ô tô",
+    "description": "Biển số P.103a báo đường cấm các loại xe cơ giới kể cả xe máy 3 bánh có thùng đi qua, trừ xe máy 2 bánh, xe gắn máy và các xe được ưu tiên theo quy định. Nếu đường cấm vì lí do đường, cầu bị yếu, có thể đặt hàng rào chắn hay chướng ngại vật trong phần đường xe chạy.",
+    "imgId": "p103a",
+    "audioId": "p103a"
+  },
+  {
+    "id": "P.103b",
+    "name": "Cấm xe ô tô rẽ phải",
+    "description": "Biển số P.103b báo đường cấm các loại xe cơ giới kể cả xe máy 3 bánh có thùng rẽ phải, trừ xe máy 2 bánh, xe gắn máy và các xe được ưu tiên theo quy định.",
+    "imgId": "p103b",
+    "audioId": "p103b"
+  },
+  {
+    "id": "P.103c",
+    "name": "Cấm xe ô tô rẽ trái",
+    "description": "Biển số P.103c báo đường cấm các loại xe cơ giới kể cả xe máy 3 bánh có thùng rẽ trái, trừ xe máy 2 bánh, xe gắn máy và các xe được ưu tiên theo quy định.",
+    "imgId": "p103c",
+    "audioId": "p103c"
+  },
+  {
+    "id": "P.104",
+    "name": "Cấm xe máy",
+    "description": "Biển số P.104 báo đường cấm các loại xe máy, trừ xe máy được ưu tiên theo quy định. Biển không có giá trị cấm những người dắt xe máy",
+    "imgId": "p104",
+    "audioId": "p104"
+  },
+  {
+    "id": "P.106a",
+    "name": "Cấm xe tải",
+    "description": "Biển số P.106a báo đường cấm các loại xe ô tô tải trừ các xe được ưu tiên trong quy định.",
+    "imgId": "p106a",
+    "audioId": "p106a"
+  },
+  {
+    "id": "P.106b",
+    "name": "Cấm xe tải ",
+    "description": "Biển số P.106b báo đường cấm các xe ô tô tải có khối lượng chuyên chở ( xác định theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ ) lớn hơn giá trị chữ số ghi trong biển ( chữ số tấn ghi bằng màu trắng trên hình vẽ xe).",
+    "imgId": "p106b",
+    "audioId": "p106b"
+  },
+  {
+    "id": "P.107a",
+    "name": "Cấm xe ô tô khách",
+    "description": "Biển số P.107a là biển báo cấm và báo hiệu đường cấm xe ô tô khách đi qua, trừ các xe được ưu tiên theo quy định.\nBiển báo P.107a không cấm xe buýt, nhưng nếu cần cấm xe khách theo số chỗ ngồi thì sử dụng biển phụ ghi số chỗ ngồi đối với các xe cần cấm, hoặc ghi số chỗ ngồi vào biểu tượng xe bằng chữ trắng.",
+    "imgId": "p107a",
+    "audioId": "p107a"
+  },
+  {
+    "id": "P.112",
+    "name": "Cấm người đi bộ",
+    "description": "Biển số P.112 báo đường cấm người đi bộ qua lại.",
+    "imgId": "p112",
+    "audioId": "p112"
+  },
+  {
+    "id": "P.115",
+    "name": "Hạn chế trọng tải toàn bộ xe",
+    "description": "Biển số P.115 cấm các loại xe ( cơ giới và thô sơ ) kể cả xe được ưu tiên có trọng tải toàn bộ xe ( gồm trọng lượng bản thân xe và hàng hoá ) vượt quá trị số ghi trên biển đi qua khu vực có biển báo này.\nTrị số ghi trên biển báo thể hiện tấn.",
+    "imgId": "p115",
+    "audioId": "p115"
+  },
+  {
+    "id": "P.117",
+    "name": "Hạn chế chiều cao",
+    "description": "Biển số P.117 cấm các loại xe ( cơ giới và thô sơ ) kể cả xe được ưu tiên có chiều cao ( tính từ mặt đường, mặt cầu đến điểm cao nhất của xe hoặc hàng ) vượt quá giá trị được ghi trên biển đi qua khu vực có biển báo này.\nTrị số trên biển thể hiện mét.",
+    "imgId": "p117",
+    "audioId": "p117"
+  },
+  {
+    "id": "P.123a",
+    "name": "Cấm rẽ trái",
+    "description": "Biển số P.123a cấm các loại xe ( cơ giới và thô sơ ) kể cả xe được ưu tiên rẽ trái ( theo hướng mũi tên ) ở những vị trí đường giao nhau.",
+    "imgId": "p123a",
+    "audioId": "p123a"
+  },
+  {
+    "id": "P.123b",
+    "name": "Cấm rẽ phải",
+    "description": "Biển số P.123b cấm các loại xe ( cơ giới và thô sơ ) kể cả xe được ưu tiên rẽ phải ( theo hướng mũi tên ) ở những vị trí đường giao nhau.",
+    "imgId": "p123b",
+    "audioId": "p123b"
+  },
+  {
+    "id": "P.124a",
+    "name": "Cấm quay đầu xe",
+    "description": "Biển số P.124a cấm các loại xe ( cơ giới và thô sơ ) kể cả xe được ưu tiên quay đầu ở vị trí đăt biển.",
+    "imgId": "p124a",
+    "audioId": "p124a"
+  },
+  {
+    "id": "P.124b",
+    "name": "Cấm ô tô quay đầu xe",
+    "description": "Biển số P.124b cấm ô tô và xe máy 3 bánh có thùng quay đầu xe tại khu vực có biển báo.",
+    "imgId": "p124b",
+    "audioId": "p124b"
+  },
+  {
+    "id": "P.124c",
+    "name": "Cấm rẽ trái và quay đầu xe",
+    "description": "Biển số P.124c cấm tất cả các loại xe ( cơ giới và thô sơ ) kể cả xe được ưu tiên rẽ trái và quay đầu xe tại khu vực đặt biển báo.",
+    "imgId": "p124c",
+    "audioId": "p124c"
+  },
+  {
+    "id": "P.125",
+    "name": "Cấm vượt",
+    "description": "Biển số P.125 cấm tất cả các loại xe cơ giới vượt nhau ( kể cả xe được ưu tiên ) tại khu vực có biển báo, trừ trường hợp vượt xe máy 2 bánh và xe gắn máy.",
+    "imgId": "p125",
+    "audioId": "p125"
+  },
+  {
+    "id": "P.127",
+    "name": "Tốc độ tối đa được phép",
+    "description": "Biển số P.127 thông báo tốc độ tối đa mà tất cả các loại xe cơ giới ( kể cả xe được ưu tiên ) được phép di chuyển trên khu vực có biển báo.",
+    "imgId": "p127",
+    "audioId": "p127"
+  },
+  {
+    "id": "P.128",
+    "name": "Cấm sử dụng còi",
+    "description": "Biển số P.128 cấm tất cả các loại xe ( cơ giới và thô sơ ) kể cả xe được ưu tiên sử dụng còi tại khu vực có biển báo.",
+    "imgId": "p128",
+    "audioId": "p128"
+  },
+  {
+    "id": "P.130",
+    "name": "Cấm dừng xe và đỗ xe",
+    "description": "Biển số P.130 cấm tất cả các loại xe cơ giới kể cả xe được ưu tiên dừng và đỗ tại khu vực đăt biển báo.",
+    "imgId": "p130",
+    "audioId": "p130"
+  },
+  {
+    "id": "P.131a",
+    "name": "Cấm đỗ xe - trừ xe được ưu tiên",
+    "description": "Biển số P.131a cấm các loại xe ( cơ giới và thô sơ ) trừ các xe được ưu tiên đỗ ở khu vực đặt biển báo.\nCác loại xe ưu tiên bao gồm: xe cứu thương, xe cứu hoả, xe cảnh sát, xe quân sự, xe bưu chính, xe chở hàng nguy hiểm, xe chở người khuyết tật, các loại xe khác được pháp luật quy định.",
+    "imgId": "p131a",
+    "audioId": "p131a"
+  },
+  {
+    "id": "P.135",
+    "name": "Hết tất cả các lệnh cấm",
+    "description": "Biển báo P.135 \"Hết tất cả các lệnh cấm\" báo hiệu đoạn đường hết tất cả các lệnh cấm.\nĐến hết đoạn đường mà nhiều biển báo cấm cùng hết hiệu lực, phải đặt biển số DP.135 \"Hết tất cả các lệnh cấm\".\nBiển có giá trị báo cho người tham gia giao thông biết hiệu lực của biển số P.121 và nhiều biển cấm khác từ biển số P.125 đến biển số P.131 (a,b,c) được đặt trước đó cùng hết tác dụng.",
+    "imgId": "p135",
+    "audioId": "p135"
+  },
+  {
+    "id": "P.137",
+    "name": "Cấm rẽ trái, rẽ phải",
+    "description": "Biển báo P.137 \"Cấm rẽ trái, rẽ phải\" biểu thị ở ngã đường phía trước cấm tất cả các loại xe cộ rẽ trái và rẽ phải\nCác ngả đường phía trước cấm tất cả các loại xe (cơ giới và thô sơ) rẽ trái hay rẽ phải, phải đặt biển số P.137 \"Cấm rẽ trái, rẽ phải\". Biển được đặt ở vị trí ngay trước nút giao của đường cấm rẽ phải, rẽ trái. Nếu có quy định cấm về thời gian hoặc loại xe thì sử dụng biển báo phụ thời gian hoặc hình vẽ loại xe cấm.",
+    "imgId": "p137",
+    "audioId": "p137"
+  },
+  {
+    "id": "P.245a",
+    "name": "Đi chậm",
+    "description": "Biển báo P.245a \"Đi chậm\" dùng để nhắc lái xe giảm tốc độ đi chậm. Biển đặt ở vị trí thích đáng trước khi đến đoạn đường yêu cầu đi chậm.",
+    "imgId": "p245a",
+    "audioId": "p245a"
+  },
+  {
+    "id": "R.301c",
+    "name": "Chỉ được rẽ trái",
+    "description": "Biển báo R.301c \"Chỉ được rẽ trái\" lệnh cho các xe chỉ được rẽ trái (trừ xe được quyền ưu tiên theo quy định). Biển này được đặt ở sau nơi đường giao nhau.",
+    "imgId": "r301c",
+    "audioId": "r301c"
+  },
+  {
+    "id": "R.301d",
+    "name": "Chỉ được rẽ phải",
+    "description": "Biển báo R.301d \"Chỉ được rẽ phải\" lệnh cho các xe chỉ được rẽ phải (trừ xe được quyền ưu tiên theo quy định). Biển này được đặt ở trước nơi đường giao nhau, có tác dụng tại nơi giao nhau đằng sau mặt biển.",
+    "imgId": "r301d",
+    "audioId": "r301d"
+  },
+  {
+    "id": "R.301e",
+    "name": "Chỉ được rẽ phải",
+    "description": "Biển báo R.301e \"Chỉ được rẽ trái\" lệnh cho các xe chỉ được rẽ trái (trừ xe được quyền ưu tiên theo quy định). Biển này được đặt ở trước nơi đường giao nhau, có tác dụng tại nơi giao nhau đằng sau mặt biển.",
+    "imgId": "r301e",
+    "audioId": "r301e"
+  },
+  {
+    "id": "R.302a",
+    "name": "Hướng phải đi vòng chướng ngại vật",
+    "description": "Biển báo R.302a \"Hướng phải đi vòng chướng ngại vật\" báo các loại xe (cơ giới và thô sơ) hướng đi vòng sang phải để qua một chướng ngại vật.\nBiển được đặt trước chướng ngại vật và tùy theo hướng đi: chỉ được vòng sang phải; chỉ được vòng sang trái; hay phải vòng sang trái hoặc sang phải mà lựa chọn kiểu biển cho phù hợp.\nBiển có hiệu lực bắt buộc các loại xe phải đi vòng chướng ngại vật theo hướng mũi tên chỉ.",
+    "imgId": "r302a",
+    "audioId": "r302a"
+  },
+  {
+    "id": "R.302b",
+    "name": "Hướng phải đi vòng chướng ngại vật",
+    "description": "Biển báo R.302b \"Hướng phải đi vòng chướng ngại vật\" báo các loại xe (cơ giới và thô sơ) hướng đi vòng sang trái để qua một chướng ngại vật.\n\nBiển được đặt trước chướng ngại vật và tùy theo hướng đi: chỉ được vòng sang phải; chỉ được vòng sang trái; hay phải vòng sang trái hoặc sang phải mà lựa chọn kiểu biển cho phù hợp.\n\nBiển có hiệu lực bắt buộc các loại xe phải đi vòng chướng ngại vật theo hướng mũi tên chỉ.",
+    "imgId": "r302b",
+    "audioId": "r302b"
+  },
+  {
+    "id": "R.303",
+    "name": "Nơi giao nhau chạy theo vòng xuyến",
+    "description": "Biển báo R303 \"Nơi giao nhau chạy theo vòng xuyến\" báo cho các loại xe (thô sơ và cơ giới) phải chạy vòng theo đảo an toàn ở nơi đường giao nhau.\n\nBiển có hiệu lực bắt buộc các loại xe muốn chuyển hướng phải chạy vòng theo đảo an toàn theo hướng mũi tên.",
+    "imgId": "r303",
+    "audioId": "r303"
+  },
+  {
+    "id": "R.407a",
+    "name": "Hướng đi một chiều",
+    "description": "Biển báo R.407a \"Hướng đi một chiều\" được đặt sau ngã ba và ngã tư, biển chỉ dẫn những đoạn đường xe chạy một chiều, chỉ cho phép các loại phương tiện giao thông đường bộ đi vào theo chiều mũi tên chỉ (đi thẳng), cấm quay đầu ngược lại (trừ các xe được quyền ưu tiên theo Luật Giao thông đường bộ).",
+    "imgId": "r407a",
+    "audioId": "r407a"
+  },
+  {
+    "id": "R.409",
+    "name": "Chỗ quay xe",
+    "description": "Biển báo R.409 \"Chỗ quay xe\" dùng để chỉ dẫn vị trí được phép quay đầu xe kiểu chữ U nhưng không cho phép rẽ trái, trừ các xe được quyền ưu tiên theo Luật Giao thông đường bộ.",
+    "imgId": "r409",
+    "audioId": "r409"
+  },
+  {
+    "id": "R.425",
+    "name": "Bệnh viện",
+    "description": "Biển báo R.425 \"Bệnh viện\" để chỉ dẫn sắp đến cơ sở điều trị bệnh ở gần đường như bệnh viện, bệnh xá, trạm xá v.v... Gặp biển này người lái xe đi chậm, chú ý quan sát và không sử dụng còi.",
+    "imgId": "r425",
+    "audioId": "r425"
+  },
+  {
+    "id": "R.434a",
+    "name": "Bến xe buýt",
+    "description": "Biển báo R.434a \"Bến xe buýt\" để chỉ dẫn chỗ dừng đỗ xe buýt cho khách lên xuống.",
+    "imgId": "r434a",
+    "audioId": "r434a"
+  },
+  {
+    "id": "S.509",
+    "name": "Chiều cao an toàn",
+    "description": "Biển báo S.509 \"Chiều cao an toàn\" dùng để bổ sung cho biển 239 \"Đường cáp điện ở phía trên\", phải đặt biển số 509 \"chiều cao an toàn\", biển này chỉ rõ chiều cao an toàn cho các phương tiện đi qua đoạn đường có dây điện bên trên.",
+    "imgId": "s509",
+    "audioId": "s509"
+  },
+  {
+    "id": "W.201a",
+    "name": "Chỗ ngoặt nguy hiểm vòng bên trái",
+    "description": "Biển báo W.201a \"Chỗ ngoặt nguy hiểm vòng bên trái\" báo trước sắp đến một chỗ ngoặt nguy hiểm vòng bên trái.\n\nChỗ ngoặt nguy hiểm là vị trí đường cong như sau:\n\n- Ở vùng đồng bằng, đường cong có góc chuyển hướng lớn hơn hay bằng 45° hoặc có bán kính nhỏ hơn hay bằng 100 m.\n\n- Ở vùng núi, đường cong có góc ở chuyển hướng lớn hơn hay bằng 45° hoặc có bán kính nhỏ hơn hay bằng 40 m.\n\nỞ những vùng mà việc quan sát của người tham gia giao thông gặp khó khăn như vùng cây rậm rạp, vùng thường có sương mù thì các vị trí đường cong không phân biệt độ lớn góc ở tâm hoặc bán kính đều coi là chỗ ngoặt nguy hiểm.\n\nSau đoạn thẳng dài từ 1 km trở lên thì đường cong đầu tiên không phân biệt độ lớn góc ở tâm hoặc bán kính đều coi là chỗ ngoặt nguy hiểm.",
+    "imgId": "w201a",
+    "audioId": "w201a"
+  },
+  {
+    "id": "W.201b",
+    "name": "Chỗ ngoặt nguy hiểm vòng bên phải",
+    "description": "Biển báo W.201b \"Chỗ ngoặt nguy hiểm vòng bên phải\" báo trước sắp đến một chỗ ngoặt nguy hiểm vòng bên phải\n\nChỗ ngoặt nguy hiểm là vị trí đường cong như sau:\n\n- Ở vùng đồng bằng, đường cong có góc chuyển hướng lớn hơn hay bằng 45° hoặc có bán kính nhỏ hơn hay bằng 100 m.\n\n- Ở vùng núi, đường cong có góc ở chuyển hướng lớn hơn hay bằng 45° hoặc có bán kính nhỏ hơn hay bằng 40 m.\n\nỞ những vùng mà việc quan sát của người tham gia giao thông gặp khó khăn như vùng cây rậm rạp, vùng thường có sương mù thì các vị trí đường cong không phân biệt độ lớn góc ở tâm hoặc bán kính đều coi là chỗ ngoặt nguy hiểm.\n\nSau đoạn thẳng dài từ 1 km trở lên thì đường cong đầu tiên không phân biệt độ lớn góc ở tâm hoặc bán kính đều coi là chỗ ngoặt nguy hiểm.",
+    "imgId": "w201b",
+    "audioId": "w201b"
+  },
+  {
+    "id": "W.202a",
+    "name": "Chỗ ngoặt nguy hiểm vòng bên trái",
+    "description": "Biển báo W.202a \"Chỗ ngoặt nguy hiểm vòng bên trái\" báo trước sắp đến một chỗ ngoặt nguy hiểm phía bên trái.\n\nChỗ ngoặt nguy hiểm là vị trí đường cong như sau:\n\n- Ở vùng đồng bằng, đường cong có góc chuyển hướng lớn hơn hay bằng 45° hoặc có bán kính nhỏ hơn hay bằng 100 m.\n\n- Ở vùng núi, đường cong có góc ở chuyển hướng lớn hơn hay bằng 45° hoặc có bán kính nhỏ hơn hay bằng 40 m.\n\nỞ những vùng mà việc quan sát của người tham gia giao thông gặp khó khăn như vùng cây rậm rạp, vùng thường có sương mù thì các vị trí đường cong không phân biệt độ lớn góc ở tâm hoặc bán kính đều coi là chỗ ngoặt nguy hiểm.\n\nSau đoạn thẳng dài từ 1 km trở lên thì đường cong đầu tiên không phân biệt độ lớn góc ở tâm hoặc bán kính đều coi là chỗ ngoặt nguy hiểm.\n\nHai chỗ ngoặt gọi là gần nhau khi đoạn thẳng từ tiếp cuối của đường cong trước đến tiếp đầu của đường cong tiếp sau nhỏ hơn 160 m.",
+    "imgId": "w202a",
+    "audioId": "w202a"
+  },
+  {
+    "id": "W.202b",
+    "name": "Chỗ ngoặt nguy hiểm vòng bên phải",
+    "description": "Biển báo W.202b \"Chỗ ngoặt nguy hiểm vòng bên phải\" báo trước sắp đến một chỗ ngoặt nguy hiểm phía bên phải.\n\nChỗ ngoặt nguy hiểm là vị trí đường cong như sau:\n\n- Ở vùng đồng bằng, đường cong có góc chuyển hướng lớn hơn hay bằng 45° hoặc có bán kính nhỏ hơn hay bằng 100 m.\n\n- Ở vùng núi, đường cong có góc ở chuyển hướng lớn hơn hay bằng 45° hoặc có bán kính nhỏ hơn hay bằng 40 m.\n\n\nỞ những vùng mà việc quan sát của người tham gia giao thông gặp khó khăn như vùng cây rậm rạp, vùng thường có sương mù thì các vị trí đường cong không phân biệt độ lớn góc ở tâm hoặc bán kính đều coi là chỗ ngoặt nguy hiểm.\n\nSau đoạn thẳng dài từ 1 km trở lên thì đường cong đầu tiên không phân biệt độ lớn góc ở tâm hoặc bán kính đều coi là chỗ ngoặt nguy hiểm.\n\nHai chỗ ngoặt gọi là gần nhau khi đoạn thẳng từ tiếp cuối của đường cong trước đến tiếp đầu của đường cong tiếp sau nhỏ hơn 160 m.",
+    "imgId": "w202b",
+    "audioId": "w202b"
+  },
+  {
+    "id": "W.203b",
+    "name": "Đường bị hẹp về phía trái",
+    "description": "Biển báo W.203b \"Đường bị hẹp về phía trái\" báo trước sắp đến một đoạn đường bị hẹp đột ngột về phía trái.\n\nĐoạn đường bị thu hẹp là đoạn đường mà phần xe chạy bị thu hẹp lại, các làn xe đi ngược chiều nhau gặp khó khăn, nguy hiểm và khả năng thông qua giảm đột ngột so với đoạn đường trước đó.\n\nSau khi đặt biển số W.203 nếu đường bị thu hẹp đến mức không có khả năng thông qua cho hai xe đi ngược chiều thì phải đặt trước vị trí thu hẹp các biển xác định quyền ưu tiên của chiều đi (biển số P.132 và biển số I.406).\n\nỞ tất cả những vị trí đường bị hẹp, người tham gia giao thông phải chú ý quan sát giao thông ngược chiều. Xe đi ở chiều đường bị thu hẹp phải nhường đường cho xe đi ngược chiều.\n\nNếu trước vị trí bị thu hẹp có đặt biển số P.132 thì phải nhường cho xe chạy ngược chiều; nếu đặt biển số I.406, thì xe được ưu tiên qua đường hẹp trước và xe ngược chiều có trách nhiệm chờ đợi.",
+    "imgId": "w203b",
+    "audioId": "w203b"
+  },
+  {
+    "id": "W.203c",
+    "name": "Đường bị hẹp về phía phải",
+    "description": "Biển báo W.203c \"Đường bị hẹp về phía phải\" báo trước sắp đến một đoạn đường bị hẹp đột ngột về phía phải.\n\nĐoạn đường bị thu hẹp là đoạn đường mà phần xe chạy bị thu hẹp lại, các làn xe đi ngược chiều nhau gặp khó khăn, nguy hiểm và khả năng thông qua giảm đột ngột so với đoạn đường trước đó.\n\nSau khi đặt biển số W.203 nếu đường bị thu hẹp đến mức không có khả năng thông qua cho hai xe đi ngược chiều thì phải đặt trước vị trí thu hẹp các biển xác định quyền ưu tiên của chiều đi (biển số P.132 và biển số I.406).\n\nỞ tất cả những vị trí đường bị hẹp, người tham gia giao thông phải chú ý quan sát giao thông ngược chiều. Xe đi ở chiều đường bị thu hẹp phải nhường đường cho xe đi ngược chiều.\n\nNếu trước vị trí bị thu hẹp có đặt biển số P.132 thì phải nhường cho xe chạy ngược chiều; nếu đặt biển số I.406, thì xe được ưu tiên qua đường hẹp trước và xe ngược chiều có trách nhiệm chờ đợi.",
+    "imgId": "w203c",
+    "audioId": "w203c"
+  },
+  {
+    "id": "W.205a",
+    "name": "Đường giao nhau",
+    "description": "Biển báo W.205a \"Đường giao nhau\" báo trước sắp đến nơi giao nhau của các tuyến đường cùng cấp (không có đường nào ưu tiên).\n\nBiển được đặt trước nơi đường giao nhau ở ngoài phạm vi nội thành, nội thị là chủ yếu. Trong nội thành, nội thị có thể châm chước không đặt biển này.",
+    "imgId": "w205a",
+    "audioId": "w205a"
+  },
+  {
+    "id": "W.205b",
+    "name": "Đường giao nhau",
+    "description": "Biển báo W.205b \"Đường giao nhau\" báo trước sắp đến nơi giao nhau của các tuyến đường cùng cấp (không có đường nào ưu tiên).\n\nBiển được đặt trước nơi đường giao nhau ở ngoài phạm vi nội thành, nội thị là chủ yếu. Trong nội thành, nội thị có thể châm chước không đặt biển này.",
+    "imgId": "w205b",
+    "audioId": "w205b"
+  },
+  {
+    "id": "W.205d",
+    "name": "Đường giao nhau",
+    "description": "Biển báo W.205d \"Đường giao nhau\" báo trước sắp đến nơi giao nhau của các tuyến đường cùng cấp (không có đường nào ưu tiên).\n\nBiển được đặt trước nơi đường giao nhau ở ngoài phạm vi nội thành, nội thị là chủ yếu. Trong nội thành, nội thị có thể châm chước không đặt biển này.",
+    "imgId": "w205d",
+    "audioId": "w205d"
+  },
+  {
+    "id": "W.207a",
+    "name": "Giao nhau với đường không ưu tiên",
+    "description": "Biển báo W.207a \"Giao nhau với đường không ưu tiên\" đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.\n\nTrên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên phải đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l). Tùy theo hình dạng nơi giao nhau để chọn kiểu biển cho thích hợp. Tại chỗ đường giao với các ngõ, ngách, hẻm hoặc tương tự, tùy theo điều kiện giao thông có thể xem xét sử dụng biển số W.207 khi cần thiết.\n\nBiển số W.207 (a,b,c,d,e,f,g,h,i,k,l) được đặt trước nơi đường giao nhau ở ngoài phạm vi nội thành, nội thị là chính. Các xe đi trên đường có đặt biển này được quyền ưu tiên qua nơi giao nhau, chỉ phải nhường đường cho các loại xe được quyền ưu tiên theo quy định.\n\nChỉ được phép đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l) trên đường ưu tiên sau khi đã đặt biển số R.401 \"Bắt đầu đường ưu tiên\" và biển số R.402 \"Hết đoạn đường ưu tiên\". Biển số R.401 và R.402 được đặt ở đầu và cuối đoạn đường ưu tiên để chỉ dẫn phạm vi đoạn đường ưu tiên.",
+    "imgId": "w207a",
+    "audioId": "w207a"
+  },
+  {
+    "id": "W.207b",
+    "name": "Giao nhau với đường không ưu tiên",
+    "description": "Biển báo W.207b \"Giao nhau với đường không ưu tiên\" đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.\n\nTrên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên phải đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l). Tùy theo hình dạng nơi giao nhau để chọn kiểu biển cho thích hợp. Tại chỗ đường giao với các ngõ, ngách, hẻm hoặc tương tự, tùy theo điều kiện giao thông có thể xem xét sử dụng biển số W.207 khi cần thiết.\n\nBiển số W.207 (a,b,c,d,e,f,g,h,i,k,l) được đặt trước nơi đường giao nhau ở ngoài phạm vi nội thành, nội thị là chính. Các xe đi trên đường có đặt biển này được quyền ưu tiên qua nơi giao nhau, chỉ phải nhường đường cho các loại xe được quyền ưu tiên theo quy định.\n\nChỉ được phép đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l) trên đường ưu tiên sau khi đã đặt biển số R.401 \"Bắt đầu đường ưu tiên\" và biển số R.402 \"Hết đoạn đường ưu tiên\". Biển số R.401 và R.402 được đặt ở đầu và cuối đoạn đường ưu tiên để chỉ dẫn phạm vi đoạn đường ưu tiên.",
+    "imgId": "w207b",
+    "audioId": "w207b"
+  },
+  {
+    "id": "W.207c",
+    "name": "Giao nhau với đường không ưu tiên",
+    "description": "Biển báo W.207c \"Giao nhau với đường không ưu tiên\" đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.\n\nTrên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên phải đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l). Tùy theo hình dạng nơi giao nhau để chọn kiểu biển cho thích hợp. Tại chỗ đường giao với các ngõ, ngách, hẻm hoặc tương tự, tùy theo điều kiện giao thông có thể xem xét sử dụng biển số W.207 khi cần thiết.\n\nBiển số W.207 (a,b,c,d,e,f,g,h,i,k,l) được đặt trước nơi đường giao nhau ở ngoài phạm vi nội thành, nội thị là chính. Các xe đi trên đường có đặt biển này được quyền ưu tiên qua nơi giao nhau, chỉ phải nhường đường cho các loại xe được quyền ưu tiên theo quy định.\n\nChỉ được phép đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l) trên đường ưu tiên sau khi đã đặt biển số R.401 \"Bắt đầu đường ưu tiên\" và biển số R.402 \"Hết đoạn đường ưu tiên\". Biển số R.401 và R.402 được đặt ở đầu và cuối đoạn đường ưu tiên để chỉ dẫn phạm vi đoạn đường ưu tiên.",
+    "imgId": "w207c",
+    "audioId": "w207c"
+  },
+  {
+    "id": "W.208",
+    "name": "Giao nhau với đường ưu tiên",
+    "description": "Biển số W.208 \"Giao nhau với đường ưu tiên\" được đặt Trên đường không ưu tiên, để báo trước sắp đến nơi giao nhau với đường ưu tiên. Trong nội thành, nội thị có thể không đặt biển này.\n\nCác xe đi trên đường có đặt biển số W.208 phải nhường đường cho xe đi trên đường ưu tiên khi qua nơi giao nhau (trừ các loại xe được quyền ưu tiên theo quy định).",
+    "imgId": "w208",
+    "audioId": "w208"
+  },
+  {
+    "id": "W.209",
+    "name": "Giao nhau có tín hiệu đèn",
+    "description": "Biển số W.209 \"Giao nhau có tín hiệu đèn\". Để báo trước nơi giao nhau có điều khiển giao thông bằng tín hiệu đèn trong trường hợp người tham gia giao thông khó quan sát thấy đèn để kịp thời xử lý. ",
+    "imgId": "w209",
+    "audioId": "w209"
+  },
+  {
+    "id": "W.210",
+    "name": "Giao nhau có rào chắn",
+    "description": "Biển số W. 210 ” Giao nhau với đường sắt có rào chắn”: Để báo trước sắp đến chỗ giao nhau giữa đường bộ và đường sắt có rào chắn kín hay rào chắn nửa kín và có nhân viên ngành đường sắt điều khiển giao thông, đặt biển số W.",
+    "imgId": "w210",
+    "audioId": "w210"
+  },
+  {
+    "id": "W.219",
+    "name": "Cảnh báo dốc xuống nguy hiểm",
+    "description": "Biển số W.219 \"Dốc xuống nguy hiểm\"\n Để báo trước sắp tới đoạn đường xuống dốc nguy hiểm phải đặt biển số W.219 \"Dốc xuống nguy hiểm\".\n Con số ghi trong biển chỉ độ dốc thực tế tính bằng % làm tròn không có số thập phân Chiều dài của đoạn dốc được chỉ dẫn bằng biển số S.501 \"Phạm vi tác dụng của biển\" đặt bên dưới biển chính.\n Những vị trí xuống dốc nguy hiểm là:\n- Độ dốc từ 6% trở lên và chiều dài dốc trên 600 m;\n- Độ dốc từ 10% trở lên và chiều dài dốc trên 140 m;",
+    "imgId": "w219",
+    "audioId": "w219"
+  },
+  {
+    "id": "W.221b",
+    "name": "Đường không bằng phẳng",
+    "description": "Biển báo giao thông báo hiệu đoạn \"đường có sóng mấp mô nhân tạo (humps)\" để hạn chế tốc độ xe chạy (biển được cắm kèm theo biển số 227 \"Hạn chế tốc độ tối đa\"), bắt buộc lái xe phải chạy với tốc độ chậm trước khi qua những điểm cần kiểm soát, kiểm tra",
+    "imgId": "w221b",
+    "audioId": "w221b"
+  },
+  {
+    "id": "W.2241",
+    "name": "Đường người đi bộ cắt ngang",
+    "description": "Biển báo W.224 \"Đường người đi bộ cắt ngang\" báo trước sắp đến phần đường ngang dành cho người đi bộ sang qua đường. Gặp biển này các loại xe cộ phải nhường ưu tiên cho người đi bộ và chỉ được chạy xe nếu như không gây nguy hiểm cho người đi bộ.\n\nPhần đường dành cho người đi bộ cắt ngang tại nơi đường giao nhau, trong nội thành, nội thị nơi người qua lại nhiều phải được sơn kẻ vạch đường dành cho người đi bộ.\n\n\nKhông cần phải đặt biển này tại các đoạn đường qua khu đông dân cư nếu người tham gia giao thông dễ thấy được phần đường sang ngang của người đi bộ, khi tốc độ hạn chế tối đa dưới 50 km/h hoặc tại vị trí này có hệ thống đèn điều khiển giao thông.",
+    "imgId": "w224",
+    "audioId": "w224"
+  },
+  {
+    "id": "W.225",
+    "name": "Trẻ em\n",
+    "description": "Biển báo W.225 \"Trẻ em\" báo trước là gần đến đoạn đường thường có trẻ em đi ngang qua hoặc tụ tập trên đường như gần vườn trẻ, trường học, câu lạc bộ.\n\nChiều dài của đoạn đường này được chỉ dẫn bằng biển số S.501 \"Phạm vi tác dụng của biển\" đặt bên dưới biển chính.\n\nGặp biển này, người tham gia giao thông phải đi chậm và thận trọng đề phòng khả năng xuất hiện và di chuyển bất ngờ của trẻ em trên mặt đường.",
+    "imgId": "w225",
+    "audioId": "w225"
+  },
+  {
+    "id": "W.227",
+    "name": "Công trường",
+    "description": "Biển báo W.227 \"Công trường\" để báo trước gần tới đoạn đường đang tiến hành sửa chữa có người và máy móc đang làm việc trên mặt đường. Khi gặp biển báo này tốc độ xe chạy phải giảm cho thích hợp, không gây nguy hiểm cho người và máy móc trên đoạn đường đó.",
+    "imgId": "w227",
+    "audioId": "w227"
+  },
+  {
+    "id": "W.233",
+    "name": "Nguy hiểm khác",
+    "description": "Biển báo W.233 \"Nguy hiểm khác\" để báo trên đường có những nguy hiểm khác.\n\nNếu trên đường có những nguy hiểm mà không thể vận dụng được các kiểu biển từ biển số W.201a đến biển số W.232 theo quy định từ phần C.1 đến phần C.32 Phụ lục này thì phải đặt biển số W.233 \"Nguy hiểm khác\".",
+    "imgId": "w233",
+    "audioId": "w233"
+  },
+  {
+    "id": "W.235",
+    "name": "Đường đôi",
+    "description": "Biển báo W.235 \"Đường đôi\" để báo trước sắp đến đoạn đường đôi (chiều đi và chiều về phân biệt rõ ràng bằng giải phân cách cứng)",
+    "imgId": "w235",
+    "audioId": "w235"
+  },
+  {
+    "id": "W.244",
+    "name": "Đoạn đường hay xảy ra tai nạn",
+    "description": "Biển báo W.244 \"Đoạn đường hay xảy ra tai nạn\" dùng để báo nguy hiểm lái xe chú ý đoạn đường phía trước thường xảy ra tai nạn để lái xe cần đặc biệt chú ý. Biển được đặt ở vị trí thích hợp nơi sắp vào đoạn đường thường xảy ra tai nạn.",
+    "imgId": "w244",
+    "audioId": "w244"
+  },
+  {
+    "id": "W.245a",
+    "name": "Đi chậm",
+    "description": "Biển báo W.245a \"Đi chậm\" dùng để nhắc lái xe giảm tốc độ đi chậm. Biển đặt ở vị trí thích đáng trước khi đến đoạn đường yêu cầu đi chậm.\n\nThông thường những biển báo này nhằm báo với người điều khiển rằng đoạn đường phía trước sẽ có vấn đề nên người lái xe phải đi chậm hoặc là khu vực đông đúc cần thiết di chuyển chậm tránh những tình huống bất ngờ.\n\nKhi gặp biển báo này thì người điều khiển được nhắc nhở, khuyến khích là nên di chuyển chậm nên pháp luật không xử phạt với trường hợp đoạn đường yêu cầu di chuyển chậm mà bạn vẫn đi nhanh. Và hiện nay cũng không quy định phương tiện phải đi chậm với tộc độ bao nhiêu nhưng người điều khiển nên chấp hành nghiêm chỉnh.\n\nVì nếu như người điều khiển chủ quan không chú tâm đến biển đã bào thì có thể gặp những tình huống bất ngờ, khó xử lý và gây ra hậu quả đáng tiếc.",
+    "imgId": "w245a",
+    "audioId": "w245a"
+  },
+  {
+    "id": "bien bao nguy hiem",
+    "name": "Biển báo nguy hiểm",
+    "description": "Empty",
+    "imgId": "w233",
+    "audioId": "w233"
+  },
+  {
+    "id": "p.106a",
+    "name": "Cấm ô tô tải",
+    "description": "Biển báo P.106a \"Cấm ô tô tải\" báo đường cấm tất cả các loại ôtô chở hàng có trọng tải từ 1,5 tấn trở lên trừ các xe được ưu tiên theo quy định. Biển có hiệu lực cấm đối với cả máy kéo và các xe máy chuyên dùng.",
+    "imgId": "p106a",
+    "audioId": "p106a"
+  },
+  {
+    "id": "p.224",
+    "name": "Đường người đi bộ cắt ngang",
+    "description": "Biển báo p.224 \"Đường người đi bộ cắt ngang\" báo trước sắp đến phần đường ngang dành cho người đi bộ sang qua đường. Gặp biển này các loại xe cộ phải nhường ưu tiên cho người đi bộ và chỉ được chạy xe nếu như không gây nguy hiểm cho người đi bộ.\n\nPhần đường dành cho người đi bộ cắt ngang tại nơi đường giao nhau, trong nội thành, nội thị nơi người qua lại nhiều phải được sơn kẻ vạch đường dành cho người đi bộ.\n\n\nKhông cần phải đặt biển này tại các đoạn đường qua khu đông dân cư nếu người tham gia giao thông dễ thấy được phần đường sang ngang của người đi bộ, khi tốc độ hạn chế tối đa dưới 50 km/h hoặc tại vị trí này có hệ thống đèn điều khiển giao thông.",
+    "imgId": "w224",
+    "audioId": "w224"
+  },
+  {
+    "id": "p.117",
+    "name": "Hạn chế chiều cao",
+    "description": "Biển số s.117 \"cấm các loại xe\" ( cơ giới và thô sơ ) kể cả xe được ưu tiên có chiều cao ( tính từ mặt đường, mặt cầu đến điểm cao nhất của xe hoặc hàng ) vượt quá giá trị được ghi trên biển đi qua khu vực có biển báo này.\nTrị số trên biển thể hiện mét.",
+    "imgId": "p117",
+    "audioId": "p117"
+  },
+  {
+    "id": "w.205a",
+    "name": "Empty",
+    "description": "Biển báo W.205a \"Đường giao nhau\" báo trước sắp đến nơi giao nhau của các tuyến đường cùng cấp (không có đường nào ưu tiên).\n\nBiển được đặt trước nơi đường giao nhau ở ngoài phạm vi nội thành, nội thị là chủ yếu. Trong nội thành, nội thị có thể châm chước không đặt biển này.",
+    "imgId": "w205a",
+    "audioId": "w205a"
+  },
+  {
+    "id": "w.207b",
+    "name": "Giao nhau với đường không ưu tiên",
+    "description": "Biển báo W.207b \"Giao nhau với đường không ưu tiên\" đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.\n\nTrên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên phải đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l). Tùy theo hình dạng nơi giao nhau để chọn kiểu biển cho thích hợp. Tại chỗ đường giao với các ngõ, ngách, hẻm hoặc tương tự, tùy theo điều kiện giao thông có thể xem xét sử dụng biển số W.207 khi cần thiết.\n\nBiển số W.207 (a,b,c,d,e,f,g,h,i,k,l) được đặt trước nơi đường giao nhau ở ngoài phạm vi nội thành, nội thị là chính. Các xe đi trên đường có đặt biển này được quyền ưu tiên qua nơi giao nhau, chỉ phải nhường đường cho các loại xe được quyền ưu tiên theo quy định.\n\nChỉ được phép đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l) trên đường ưu tiên sau khi đã đặt biển số R.401 \"Bắt đầu đường ưu tiên\" và biển số R.402 \"Hết đoạn đường ưu tiên\". Biển số R.401 và R.402 được đặt ở đầu và cuối đoạn đường ưu tiên để chỉ dẫn phạm vi đoạn đường ưu tiên.",
+    "imgId": "w207b",
+    "audioId": "w207b"
+  },
+  {
+    "id": "w.207c",
+    "name": "Giao nhau với đường không ưu tiên",
+    "description": "Biển báo W.207c \"Giao nhau với đường không ưu tiên\" đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.\n\nTrên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên phải đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l). Tùy theo hình dạng nơi giao nhau để chọn kiểu biển cho thích hợp. Tại chỗ đường giao với các ngõ, ngách, hẻm hoặc tương tự, tùy theo điều kiện giao thông có thể xem xét sử dụng biển số W.207 khi cần thiết.\n\nBiển số W.207 (a,b,c,d,e,f,g,h,i,k,l) được đặt trước nơi đường giao nhau ở ngoài phạm vi nội thành, nội thị là chính. Các xe đi trên đường có đặt biển này được quyền ưu tiên qua nơi giao nhau, chỉ phải nhường đường cho các loại xe được quyền ưu tiên theo quy định.\n\nChỉ được phép đặt biển số W.207 (a,b,c,d,e,f,g,h,i,k,l) trên đường ưu tiên sau khi đã đặt biển số R.401 \"Bắt đầu đường ưu tiên\" và biển số R.402 \"Hết đoạn đường ưu tiên\". Biển số R.401 và R.402 được đặt ở đầu và cuối đoạn đường ưu tiên để chỉ dẫn phạm vi đoạn đường ưu tiên.",
+    "imgId": "w207c",
+    "audioId": "w207c"
+  },
+  {
+    "id": "w.224",
+    "name": "Đường người đi bộ cắt ngang",
+    "description": "Biển báo W.224 \"Đường người đi bộ cắt ngang\" báo trước sắp đến phần đường ngang dành cho người đi bộ sang qua đường. Gặp biển này các loại xe cộ phải nhường ưu tiên cho người đi bộ và chỉ được chạy xe nếu như không gây nguy hiểm cho người đi bộ.\n\nPhần đường dành cho người đi bộ cắt ngang tại nơi đường giao nhau, trong nội thành, nội thị nơi người qua lại nhiều phải được sơn kẻ vạch đường dành cho người đi bộ.\n\n\nKhông cần phải đặt biển này tại các đoạn đường qua khu đông dân cư nếu người tham gia giao thông dễ thấy được phần đường sang ngang của người đi bộ, khi tốc độ hạn chế tối đa dưới 50 km/h hoặc tại vị trí này có hệ thống đèn điều khiển giao thông.",
+    "imgId": "w224",
+    "audioId": "w224"
+  }
+]

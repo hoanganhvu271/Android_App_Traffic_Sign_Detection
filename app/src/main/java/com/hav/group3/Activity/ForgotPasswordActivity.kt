@@ -8,6 +8,7 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.hav.group3.Api.G3Api
@@ -29,7 +30,10 @@ class ForgotPasswordActivity : ComponentActivity(){
 
         val email = findViewById<EditText>(R.id.et_email)
         val button = findViewById<Button>(R.id.sendOtp)
-
+        val back = findViewById<ImageView>(R.id.back)
+        back.setOnClickListener(View.OnClickListener {
+            finish()
+        });
 
 
         button.setOnClickListener {

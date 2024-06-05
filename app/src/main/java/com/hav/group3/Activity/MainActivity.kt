@@ -30,12 +30,6 @@ class MainActivity : ComponentActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         setContentView(R.layout.login)
 
-        val token = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE).getString("token", null)
-        if (token != null) {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-        }
-
         val register = findViewById<TextView>(R.id.tv_register)
         register.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
