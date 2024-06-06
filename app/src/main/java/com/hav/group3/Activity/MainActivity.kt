@@ -57,8 +57,8 @@ class MainActivity : ComponentActivity() {
             ?.enqueue( object : Callback<LoginResponse?> {
                 override fun onResponse(call: Call<LoginResponse?>, response: Response<LoginResponse?>) {
                     if (response.isSuccessful && response.body()?.status == 200){
-                        var sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-                        var editor = sharedPreferences.edit()
+                        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
                         editor.putString("token", response.body()?.data)
                         editor.apply()
                         val intent = Intent(this@MainActivity, HomeActivity::class.java)

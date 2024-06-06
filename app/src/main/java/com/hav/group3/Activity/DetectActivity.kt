@@ -204,12 +204,14 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
                 it.shutdown()
             }
         }
-//        mediaPlayer?.let {
-//            if (it.isPlaying) {
-//                it.stop()
-//                it.release()
-//            }
-//        }
+        scope.launch(Dispatchers.IO) {
+            mediaPlayer?.let {
+                if (it.isPlaying) {
+                    it.stop()
+                    it.release()
+                }
+            }
+        }
         cameraProvider?.unbindAll()
         cameraProvider = null
         job.cancel()
@@ -261,18 +263,20 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
                 isExisted[clsIndex] = 1
                 val sign = db?.getTrafficSign(boundingBoxes[i].clsName)
 
-                if (!isDetecting[clsIndex]) {
+                val audioName = boundingBoxes[i].clsName.replace(".", "").lowercase()
+//                    Log.d("Vu", "hehe")
+//                    val resourceId = audioResourceMap[audioName]
+                val context = this@DetectActivity
+                val resourceId =
+                    context.resources.getIdentifier(audioName, "raw", context.packageName)
+
+                if (!isDetecting[clsIndex] && !audioQueue.contains(resourceId)) {
 
                     if (sign != null) {
                         insertHistory(sign)
                     }
 
-                    val audioName = boundingBoxes[i].clsName.replace(".", "").lowercase()
-//                    Log.d("Vu", "hehe")
-//                    val resourceId = audioResourceMap[audioName]
-                    val context = this@DetectActivity
-                    val resourceId =
-                        context.resources.getIdentifier(audioName, "raw", context.packageName)
+
                     if (resourceId != null) {
                         audioQueue.offer(resourceId)
                         isDetecting[clsIndex] = true
@@ -312,14 +316,19 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
             if (!isPlay && audioQueue.isNotEmpty()) {
                 val nextAudio = audioQueue.poll()
                 mediaPlayer?.release()
-                mediaPlayer = MediaPlayer.create(this@DetectActivity, nextAudio).apply {
-                    setOnCompletionListener {
-                        isPlay = false
-                        it.release()
-                        playNextAudio()
+                if (nextAudio != null && nextAudio != 0) {
+                    mediaPlayer = MediaPlayer.create(this@DetectActivity, nextAudio).apply {
+                        setOnCompletionListener {
+                            isPlay = false
+                            it.release()
+                            scope.launch(Dispatchers.IO) {
+                                delay(1000)
+                                playNextAudio()
+                            }
+                        }
+                        start()
+                        isPlay = true
                     }
-                    start()
-                    isPlay = true
                 }
             }
         }
@@ -372,9 +381,9 @@ class DetectActivity : AppCompatActivity(), Detector.DetectorListener {
                     response: Response<DataResponse?>
                 ) {
                     if (response.isSuccessful && response.body()?.status == 200) {
-                        Toast.makeText(this@DetectActivity, "Saved!", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this@DetectActivity, "Saved!", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(this@DetectActivity, "Not Saved!", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this@DetectActivity, "Not Saved!", Toast.LENGTH_SHORT).show()
                     }
                 }
 

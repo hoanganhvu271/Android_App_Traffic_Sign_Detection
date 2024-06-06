@@ -131,5 +131,4 @@ class DatabaseHelper(private val context: Context) : SQLiteOpenHelper(context, D
         cursor.close()
         return signList
     }
-
 }

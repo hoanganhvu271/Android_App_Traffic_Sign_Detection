@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
@@ -19,6 +20,7 @@ class SplashScreen : ComponentActivity() {
         setContentView(R.layout.splash_screen)
         Handler().postDelayed({
             val token = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE).getString("token", "")
+//            Log.d("Vu", token.toString());
             if (token != "") {
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)

@@ -32,6 +32,9 @@ class Detector(
     private var tensorHeight = 0
     private var numChannel = 0
     private var numElements = 0
+    private val tracker = Tracker()
+
+
 
     private val imageProcessor = ImageProcessor.Builder()
         .add(NormalizeOp(INPUT_MEAN, INPUT_STANDARD_DEVIATION))
@@ -107,7 +110,10 @@ class Detector(
             return
         }
 
-        detectorListener.onDetect(bestBoxes, inferenceTime)
+        tracker.update(bestBoxes)
+        val trackedObjects = tracker.getTrackedObjects()
+        Log.d("Vu", trackedObjects.toString())
+        detectorListener.onDetect(trackedObjects.map { it.boundingBox }, inferenceTime)
     }
 
     private fun bestBox(array: FloatArray) : List<BoundingBox>? {
